@@ -19,7 +19,9 @@ let project = Project(
             sources: ["Sources/**"],
             resources: ["Resources/**"],
             dependencies: [
-                .project(target: "TuistUI", path: "../TuistUI")
+                .project(target: "TuistUI", path: "../TuistUI"),
+                .external(name: "Alamofire"),
+                .external(name: "ComposableArchitecture")
             ]
         ),
         .target(

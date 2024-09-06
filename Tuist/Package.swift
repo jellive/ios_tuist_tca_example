@@ -16,7 +16,8 @@ let package = Package(
     name: "ios_tuis_tca_example",
     dependencies: [
         // Add your own dependencies here:
-        // .package(url: "https://github.com/Alamofire/Alamofire", from: "5.0.0"),
+         .package(url: "https://github.com/Alamofire/Alamofire", from: "5.0.0"),
+         .package(url: "https://github.com/pointfreeco/swift-composable-architecture", from: "1.14.0")
         // You can read more about dependencies here: https://docs.tuist.io/documentation/tuist/dependencies
     ]
 )

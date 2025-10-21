@@ -32,6 +32,19 @@ let project = Project(
             infoPlist: .default,
             sources: ["Tests/**"],
             resources: [],
+            dependencies: [
+                .target(name: "ios_tuis_tca_example"),
+                .external(name: "ComposableArchitecture")
+            ]
+        ),
+        .target(
+            name: "ios_tuis_tca_exampleUITests",
+            destinations: .iOS,
+            product: .uiTests,
+            bundleId: "io.tuist.ios-tuis-tca-exampleUITests",
+            infoPlist: .default,
+            sources: ["UITests/**"],
+            resources: [],
             dependencies: [.target(name: "ios_tuis_tca_example")]
         ),
     ]

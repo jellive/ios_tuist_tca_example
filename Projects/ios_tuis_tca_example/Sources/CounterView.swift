@@ -6,7 +6,7 @@ import Combine
 
 public struct CounterView: View {
 
-    
+
     // store: Feature(Reducer Protocol을 준수하는)의 스토어임, 상태, 액션을 가지고 있음 - 커맨드 센터 역할
     let store: StoreOf<CounterFeature>
 
@@ -14,17 +14,22 @@ public struct CounterView: View {
         CommonView()
         VStack {
           Text("\(store.count)")
-                
+                .accessibilityIdentifier("counterLabel")
+                .font(.largeTitle)
+
           HStack {
             Button("-") {
               store.send(.decrementButtonTapped)
             }
-            
+            .accessibilityIdentifier("decrementButton")
+
             Button("+") {
               store.send(.incrementButtonTapped)
             }
+            .accessibilityIdentifier("incrementButton")
           }
         }
+        .padding()
     }
 }
 
